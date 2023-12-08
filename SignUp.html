@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .phu-signup-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Form Styles */
+        .form-signup {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-signup-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Password Toggle Icon */
+
+        /* Additional Classes (you can add more based on your requirements) */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-danger {
+            color: #dc3545;
+        }
+
+        #inputPassword,
+        #inputConfirmPassword {
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        .password-icon {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        .input-group-append {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .password-icon i {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+            /* Adjust the font size as needed */
+            line-height: 1;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container phu-signup-container">
+        <form class="form-signup" id="signUpForm">
+            <h2 class="form-signin-heading">Sign Up</h2>
+            <label for="inputFullName" class="sr-only">Full Name</label>
+            <input type="text" id="inputFullName" class="form-control" placeholder="Full Name" required>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+            <label for="inputPhone" class="sr-only">Phone</label>
+            <input type="tel" id="inputPhone" class="form-control" placeholder="Phone" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <div class="input-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div class="input-group-append">
+                    <span class="input-group-text password-icon" id="showPassword">
+                        <i class="fas fa-eye-slash" id="eyeIcon"></i>
+                    </span>
+                </div>
+            </div>
+            <label for="inputConfirmPassword" class="sr-only">Re-enter Password</label>
+            <div class="input-group">
+                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Re-enter Password"
+                    required>
+                <div class="input-group-append">
+                    <span class="input-group-text password-icon" id="showConfirmPassword">
+                        <i class="fas fa-eye-slash" id="eyeConfirmIcon"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>Already have an account? <a href="SignIn.html">Sign In</a></p>
+            </div>
+            <button class="btn btn-lg btn-primary" type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#signUpForm').submit(function (e) {
+                const fullName = $('#inputFullName').val();
+                const email = $('#inputEmail').val();
+                const phone = $('#inputPhone').val();
+                const password = $('#inputPassword').val();
+                const confirmPassword = $('#inputConfirmPassword').val();
+
+                if (!validateEmail(email) || password.length < 6 || password !== confirmPassword || fullName === '' || phone === '') {
+                    e.preventDefault();
+                    if (!validateEmail(email)) {
+                        alert('Please enter a valid email address.');
+                    }
+                    if (password.length < 6) {
+                        alert('Password must be at least 6 characters long.');
+                    }
+                    if (password !== confirmPassword) {
+                        alert('Passwords do not match.');
+                    }
+                    if (fullName === '') {
+                        alert('Please enter your full name.');
+                    }
+                    if (phone === '') {
+                        alert('Please enter your phone number.');
+                    }
+                }
+            });
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // Toggle password visibility for password field
+            $('#showPassword').on('click', function () {
+                const passwordField = $('#inputPassword');
+                const fieldType = passwordField.attr('type');
+                if (fieldType === 'password') {
+                    passwordField.attr('type', 'text');
+                    $('#eyeIcon').removeClass('fa-eye-slash').addClass('fa-eye');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $('#eyeIcon').removeClass('fa-eye').addClass('fa-eye-slash');
+                }
+            });
+
+            // Toggle password visibility for confirm password field
+            $('#showConfirmPassword').on('click', function () {
+                const confirmPasswordField = $('#inputConfirmPassword');
+                const fieldType = confirmPasswordField.attr('type');
+                if (fieldType === 'password') {
+                    confirmPasswordField.attr('type', 'text');
+                    $('#eyeConfirmIcon').removeClass('fa-eye-slash').addClass('fa-eye');
+                } else {
+                    confirmPasswordField.attr('type', 'password');
+                    $('#eyeConfirmIcon').removeClass('fa-eye').addClass('fa-eye-slash');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/UserInfo.css">
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+    <title>User Info</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/Loader.js"></script>
+    <script src="./js/UserInfo.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Sidebar -->
+        <!-- Content -->
+        <div class="content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="user">
+                    <div class="user-name">Võ Hồng Phú</div>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-user"></i> Thông tin tài khoản
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-clipboard-list"></i> Quản lí đơn hàng
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-address-book"></i> Sổ địa chỉ
+                </div>
+                <!-- Other sidebar items -->
+                <!-- ... -->
+            </aside>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="section">
+                    <h2>Thông tin tài khoản</h2>
+                    <div class="info">
+                        <!-- Left Section -->
+                        <div class="left-section">
+                            <form id="info">
+                                <div class="info-item name">
+                                    <label for="fullName">Họ và tên</label>
+                                    <input type="text" id="fullName" class="input-box" style="margin-left: 30px;">
+                                </div>
+                                <div class="info-item birthday">
+                                    <label for="birthday" style="display: inline-block;">Ngày sinh</label>
+                                    <div class="date-dropdown">
+                                        <select id="day"></select>
+                                        <select id="month"></select>
+                                        <select id="year"></select>
+                                    </div>
+                                </div>
+                                <div class="info-item gender">
+                                    <label style="margin-right: 10px;">Giới tính</label>
+                                    <div class="gender-radio">
+                                        <label for="male"><input type="radio" id="male" name="gender">Nam</label>
+                                        <label for="female"><input type="radio" id="female" name="gender">Nữ</label>
+                                        <label for="other"><input type="radio" id="other" name="gender">Khác</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="save-button">Lưu thay đổi</button>
+                        </div>
+                        <!-- Right Section -->
+                        <div class="right-section">
+                            <div class="info-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <label for="phone">Số điện thoại</label>
+                                <span class="update">0909091234</span>
+                                <button class="update-button" id="update-phone">Cập nhật</button>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <label for="email">Địa chỉ email</label>
+                                <span class="update">example@gmail.com</span>
+                                <button class="update-button" id="update-email">Cập nhật</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
