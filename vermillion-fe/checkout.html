@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Checkout Page</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Checkout</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Product Image</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Product 1 -->
+      <tr class="product-row" data-price="50.00">
+        <td><img src="product1.jpg" alt="Product 1" class="img-thumbnail" style="width: 100px;"></td>
+        <td>Product 1</td>
+        <td>$50.00</td>
+        <td>
+          <input type="number" class="form-control quantity-input" value="1" min="1">
+        </td>
+        <td class="total-price">$50.00</td>
+      </tr>
+
+      <!-- Product 2 -->
+      <tr class="product-row" data-price="35.00">
+        <td><img src="product2.jpg" alt="Product 2" class="img-thumbnail" style="width: 100px;"></td>
+        <td>Product 2</td>
+        <td>$35.00</td>
+        <td>
+          <input type="number" class="form-control quantity-input" value="2" min="1">
+        </td>
+        <td class="total-price">$70.00</td>
+      </tr>
+
+      <!-- Add more products as needed -->
+
+    </tbody>
+  </table>
+
+  <!-- Total Price -->
+  <div class="text-right">
+    <h4>Total: <span id="total-price">120.00</span></h4>
+  </div>
+
+  <!-- Checkout Button -->
+  <div class="text-right mt-3">
+    <button class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Update total price when quantity changes
+    $('.quantity-input').on('input', function() {
+      var quantity = parseInt($(this).val());
+      if (quantity < 1) {
+        // Display a confirmation dialog
+        var confirmRemove = window.confirm("Do you want to remove this product from the cart?");
+        if (confirmRemove) {
+          // User clicked 'OK', remove the product
+          $(this).closest('.product-row').remove();
+          updateTotalPrice();
+        } else {
+          // User clicked 'Cancel', restore the quantity to 1
+          $(this).val(1);
+          updateTotalPrice();
+        }
+      } else {
+        updateTotalPrice();
+      }
+    });
+
+    // Initial total price calculation
+    updateTotalPrice();
+
+    function updateTotalPrice() {
+      var totalPrice = 0;
+      $('.product-row').each(function() {
+        var price = parseFloat($(this).data('price'));
+        var quantity = parseInt($(this).find('.quantity-input').val());
+        var total = price * quantity;
+        $(this).find('.total-price').text('$' + total.toFixed(2));
+        totalPrice += total;
+      });
+
+      $('#total-price').text('$' + totalPrice.toFixed(2));
+    }
+
+    function proceedToCheckout() {
+      // Add your checkout logic here
+      alert("Proceeding to checkout. Implement your checkout logic here.");
+    }
+  });
+</script>
+
+</body>
+</html>
