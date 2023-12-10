@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/UserInfo.css">
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+    <title>Address</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/Loader.js"></script>
+    <script src="./js/UserInfo.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <div class="content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user">
+                <div class="user-name">Võ Hồng Phú</div>
+            </div>
+            <a href="UserInfo.html" class="sidebar-item">
+                <i class="fas fa-user"></i> Thông tin tài khoản
+            </a>
+            <a href="OrderManagement.html" class="sidebar-item">
+                <i class="fas fa-clipboard-list"></i> Quản lí đơn hàng
+            </a>
+            <a href="Address.html" class="sidebar-item">
+                <i class="fas fa-address-book"></i> Sổ địa chỉ
+            </a>
+            <!-- Other sidebar items -->
+            <!-- ... -->
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Nội dung của trang Address.html -->
+            <h2 class="address-title">Sổ địa chỉ</h2>
+            <a href="AddressCreate.html" class="add-address-button">
+                <i class="fas fa-plus-circle"></i> Thêm địa chỉ mới
+            </a>
+
+            <div class="address-container">
+                <div class="address-item">
+                    <div class="address-info">
+                        <div class="name">Võ Hồng Phú
+                            <span>
+                                <div class="default-address">
+                                    <i class="fas fa-check"></i>
+                                    Địa chỉ mặc định
+                                </div>
+                            </span>
+                        </div>
+                        <div class="address-details">268 Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh</div>
+                        <div class="phone-number">0123456789</div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="AddressEdit.html" class="edit-button">Chỉnh sửa</a>
+                        <button class="delete-button">Xóa</button>
+                    </div>
+                </div>
+
+                <div class="address-item">
+                    <div class="address-info">
+                        <div class="name">Phú Võ Hồng</div>
+                        <div class="address-details">184 Lê Đại Hành, Phường 15, Quận 11, Hồ Chí Minh</div>
+                        <div class="phone-number">0123456789</div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="AddressEdit.html" class="edit-button">Chỉnh sửa</a>
+                        <button class="delete-button">Xóa</button>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <div class="address-info">
+                        <div class="name">Hồng Phú Võ</div>
+                        <div class="address-details">1923 3/2, Phường 1, Quận 3, Hồ Chí Minh</div>
+                        <div class="phone-number">0123456789</div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="AddressEdit.html" class="edit-button">Chỉnh sửa</a>
+                        <button class="delete-button">Xóa</button>
+                    </div>
+                </div>
+                <!-- Thêm các address-item khác tùy theo số lượng địa chỉ -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const deleteButtons = document.querySelectorAll('.delete-button');
+
+            deleteButtons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    // Hiển thị hộp thoại xác nhận
+                    const confirmed = confirm('Bạn có chắc chắn muốn xóa?');
+
+                    // Kiểm tra xem người dùng đã xác nhận xóa hay không
+                    if (confirmed) {
+                        const addressItem = this.closest('.address-item');
+                        addressItem.remove();
+                        // Thêm logic xóa ở đây, có thể gửi request đến server hoặc thực hiện các hành động cần thiết.
+                        console.log('Đã xóa');
+                    } else {
+                        console.log('Không có gì xảy ra');
+                    }
+                });
+            });
+
+            // deleteButtons.forEach(button => {
+            //     button.addEventListener('click', function () {
+            //         const addressItem = this.closest('.address-item');
+            //         addressItem.remove();
+            //         // Thêm logic xóa ở đây, có thể gửi request đến server hoặc thực hiện các hành động cần thiết.
+            //     });
+            // });
+
+            const addressItems = document.querySelectorAll('.address-item');
+
+            // Lặp qua từng đối tượng address-item
+            addressItems.forEach((addressItem) => {
+                // Kiểm tra nếu địa chỉ được đánh dấu là địa chỉ mặc định
+                const isDefaultAddress = addressItem.querySelector('.default-address');
+                if (isDefaultAddress) {
+                    // Tìm nút "Xóa" trong address-item và ẩn đi
+                    const deleteButton = addressItem.querySelector('.delete-button');
+                    deleteButton.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

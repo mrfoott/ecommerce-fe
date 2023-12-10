@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/UserInfo.css">
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+    <title>Address Create</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/Loader.js"></script>
+    <script src="./js/UserInfo.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <div class="content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user">
+                <div class="user-name">Võ Hồng Phú</div>
+            </div>
+            <a href="UserInfo.html" class="sidebar-item">
+                <i class="fas fa-user"></i> Thông tin tài khoản
+            </a>
+            <a href="OrderManagement.html" class="sidebar-item">
+                <i class="fas fa-clipboard-list"></i> Quản lí đơn hàng
+            </a>
+            <a href="Address.html" class="sidebar-item">
+                <i class="fas fa-address-book"></i> Sổ địa chỉ
+            </a>
+            <!-- Other sidebar items -->
+            <!-- ... -->
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2 class="address-title">Chỉnh sửa địa chỉ</h2>
+
+            <form class="address-edit-form">
+                <div class="address-edit-row">
+                    <div class="address-edit-left">
+                        <label for="fullName" class="address-edit-label">Họ và tên</label>
+                    </div>
+                    <div class="address-edit-right">
+                        <input type="text" id="fullName" class="address-edit-input">
+                    </div>
+                </div>
+                <div class="address-edit-row">
+                    <div class="address-edit-left">
+                        <label for="phoneNumber" class="address-edit-label">Số điện thoại</label>
+                    </div>
+                    <div class="address-edit-right">
+                        <input type="text" id="phoneNumber" class="address-edit-input">
+                    </div>
+                </div>
+                <div class="address-edit-row">
+                    <div class="address-edit-left">
+                        <label for="addressDetails" class="address-edit-label">Địa chỉ</label>
+                    </div>
+                    <div class="address-edit-right">
+                        <textarea id="addressDetails" style="resize: none;" class="address-edit-input" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="address-edit-item">
+                    <input type="checkbox" id="setDefault" class="address-edit-checkbox">
+                    <label for="setDefault" class="address-edit-label">Đặt làm địa chỉ mặc định</label>
+                </div>
+            </form>
+            <button id="updateButton" class="address-edit-update">Cập nhật</button>
+        </div>
+    </div>
+
+    <script>
+        const updateButton = document.querySelector('.address-edit-update');
+
+        updateButton.addEventListener('click', function () {
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const addressDetails = document.getElementById('addressDetails').value;
+
+            const isDefault = document.getElementById('setDefault').checked;
+
+            console.log("Họ và tên:", fullName);
+            console.log("Số điện thoại:", phoneNumber);
+            console.log("Địa chỉ:", addressDetails);
+            console.log("Đặt làm địa chỉ mặc định:", isDefault);
+
+            // Reset các trường input sau khi bấm nút Cập nhật
+            document.getElementById('fullName').value = '';
+            document.getElementById('phoneNumber').value = '';
+            document.getElementById('addressDetails').value = '';
+            document.getElementById('setDefault').checked = false;
+        });
+    </script>
+</body>
+
+</html>
