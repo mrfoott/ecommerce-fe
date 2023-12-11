@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/HomePage.css">
+    <link rel="stylesheet" href="../css/Navbar.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Đồ chơi cho trẻ em</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <nav id="phu-navbar"
+            class="navbar navbar-expand-lg navbar-light bg-light custom-navbar header fixed-top phu-navbar"
+            style="height: 50px;">
+            <a class="navbar-brand" href="#" style="height: 100%;">
+                <img src="../images/Avatar.jpg" alt="Logo" style="height: 100%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Form tìm kiếm di chuyển ra ngoài collapse -->
+            <form class="form-inline my-2 my-lg-0 ml-auto">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Các nút trong thanh điều hướng -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-home"></i>
+                            Trang Chủ
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a id="account-link" class="nav-link" href="#">
+                            <i class="fas fa-user"></i>
+                            Tài Khoản
+                        </a>
+                        <div id="account-dropdown" class="account-dropdown">
+                            <ul>
+                                <li><a href="AccountInfo.html">Thông tin tài khoản</a></li>
+                                <li><a href="MyOrders.html">Đơn hàng của tôi</a></li>
+                                <li><a href="SignOut.html">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-cart fa-lg fa-relative">
+                                <span class="badge badge-danger">3</span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content" style="margin-top: 50px;">
+        <!-- Nội dung trang web của bạn sẽ nằm ở đây -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="../ProductCategory.html"><i class="fas fa-book"></i> Sách</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-laptop"></i> Hàng điện tử</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-tshirt"></i> Thời trang</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-gift"></i> Quà lưu niệm</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-bicycle"></i> Xe đạp</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-gamepad"></i> Đồ chơi</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-baby"></i> Đồ dùng cho trẻ em</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-tools"></i> Công cụ</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-heartbeat"></i> Sức khỏe và làm đẹp</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-paint-brush"></i> Mỹ thuật</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-futbol"></i> Thể thao</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-music"></i> Âm nhạc</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-utensils"></i> Đồ ăn</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-flask"></i> Hóa học</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-paw"></i> Vật nuôi</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-mobile-alt"></i> Điện thoại di động</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-camera"></i> Máy ảnh</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-home"></i> Nội thất</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-plane"></i> Du lịch</a></li>
+                <li><a href="../ProductCategory.html"><i class="fas fa-wrench"></i> Sửa chữa</a></li>
+                <!-- Thêm các mục liên kết khác nếu cần -->
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="product-section">
+                <h2>Danh mục: đồ chơi cho trẻ em</h2>
+                <div class="best-selling best-selling1">
+                    <div class="slider slider-1">
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 1</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 2</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 3</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 4</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 1</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 2</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 3</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 4</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 4</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="product-card product-card1" data-url="ProductInfo.html">
+                            <img src="../images/product_sample.jpg" alt="Product 1">
+                            <h3>Sản Phẩm 4</h3>
+                            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Veniam
+                                cumque distinctio voluptatum atque provident ipsum adipisci, tenetur iure minima ratione
+                                totam vel quidem odit sapiente eligendi eius eaque ex pariatur!
+                                Quo ratione magnam vero? Doloribus pariatur perspiciatis maxime. Facilis, nulla. Vitae
+                                natus
+                                harum nam sapiente officiis quia, accusantium est blanditiis deleniti quos doloribus
+                                exercitationem amet suscipit laborum consequuntur perspiciatis qui.</p>
+                            <div class="product-price">
+                                <h2>50.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
