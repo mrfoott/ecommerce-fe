@@ -168,8 +168,8 @@
 <!-- Navbar -->
 <nav id="phu-navbar" class="navbar navbar-expand-lg navbar-light bg-light custom-navbar header fixed-top phu-navbar"
         style="height: 50px;">
-        <a class="navbar-brand" href="#" style="height: 100%;">
-            <img src="./images/Avatar.jpg" alt="Logo" style="height: 100%;">
+        <a class="navbar-brand" href="../HomePage.html" style="height: 100%;">
+            <img src="../images/Avatar.jpg" alt="Logo" style="height: 100%;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -195,7 +195,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="../HomePage.html">
                         <i class="fas fa-home"></i>
                         Trang Chủ
                     </a>
@@ -207,14 +207,14 @@
                     </a>
                     <div id="account-dropdown" class="account-dropdown">
                         <ul>
-                            <li><a href="AccountInfo.html">Thông tin tài khoản</a></li>
-                            <li><a href="MyOrders.html">Đơn hàng của tôi</a></li>
-                            <li><a href="SignOut.html">Đăng xuất</a></li>
+                            <li><a href="../UserInfo.html">Thông tin tài khoản</a></li>
+                            <li><a href="../OrderManagement.html">Đơn hàng của tôi</a></li>
+                            <li><a href="../SignOut.html">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="./cart.html">
                         <i class="fas fa-shopping-cart fa-lg fa-relative">
                             <span class="badge badge-danger">3</span>
                         </i>
@@ -232,7 +232,7 @@
                     <div class="preview n-product-preview col-md-6">
                         <div class="n-preview-pic tab-content">
                             <div class="tab-pane active" id="pic-1"><img
-                                    src="https://pos.nvncdn.net/ceb134-68302/ps/20211116_2HzcwUt9NMAWxniwI761hyao.jpg" />
+                                    src="https://cdn.tgdd.vn/Products/Images/2162/230802/Slider/sony-ht-g700-140421-0913070.jpg" />
                             </div>
                             <div class="tab-pane" id="pic-2"><img
                                     src="https://cdn.mediamart.vn/images/product/-lsJqI8.jpg" /></div>
@@ -240,7 +240,7 @@
                         </div>
                         <ul class="n-preview-thumbnail nav nav-tabs">
                             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                        src="https://pos.nvncdn.net/ceb134-68302/ps/20211116_2HzcwUt9NMAWxniwI761hyao.jpg" /></a>
+                                        src="https://cdn.tgdd.vn/Products/Images/2162/230802/Slider/sony-ht-g700-140421-0913070.jpg" /></a>
                             </li>
                             <li><a data-target="#pic-2" data-toggle="tab"><img
                                         src="https://cdn.mediamart.vn/images/product/-lsJqI8.jpg" /></a></li>
@@ -259,16 +259,16 @@
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                             </div>
-                            <span class="review-no">41 reviews</span>
+                            <span class="review-no">41 đánh giá</span>
                         </div>
-                        <h5>Branch: Sony</h5>
+                        <h5>Nhãn hiệu: Sony</h5>
                         <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium
                             cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                        <h4 class="price">current price: <span>$180</span></h4>
-                        <p class="vote instock"><i>instock: 10</i>
+                        <h4 class="price">Giá: <span>10.000.000 ₫</span></h4>
+                        <p class="vote instock"><i>Còn lại: 10</i>
                         </p>
 
-                        <h5 class="colors mt-2">Quantity:
+                        <h5 class="colors mt-2">Số lượng:
                             <div class="quantity-container">
                                 <button class="btn" id="decreaseBtn">-</button>
                                 <input type="text" class="form-control quantity-input" id="quantityInput" value="1">
@@ -276,7 +276,7 @@
                             </div>
                         </h5>
                         <div class="action mt-3">
-                            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                            <button class="add-to-cart btn btn-default" type="button">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
@@ -288,7 +288,7 @@
             <div class="best-selling">
                 <div class="slider">
                     <div class="product-card" data-url="ProductInfo.html">
-                        <img src="../images/product_sample.jpg" alt="Product 1">
+                        <a href="./product_details.html"><img src="../images/product_sample.jpg" alt="Product 1"></a>
                         <h3>Sản Phẩm 1</h3>
                         <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                             Veniam
@@ -513,7 +513,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="comment-box ml-2">
-                            <h4>Add a review</h4>
+                            <h4>Thêm đánh giá</h4>
                             <div class="rating">
                                 <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
                                 <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
@@ -522,7 +522,7 @@
                                 <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                             </div>
                             <div class="comment-area">
-                                <textarea class="form-control" placeholder="what is your review?" rows="4"></textarea>
+                                <textarea class="form-control" placeholder="Bạn nghĩ gì về sản phẩm này?" rows="4"></textarea>
                             </div>
                             <div class="comment-btns mt-2">
                                 <div class="row">

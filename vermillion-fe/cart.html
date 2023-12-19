@@ -23,8 +23,8 @@
  <!-- Navbar -->
  <nav id="phu-navbar" class="navbar navbar-expand-lg navbar-light bg-light custom-navbar header fixed-top phu-navbar"
  style="height: 50px;">
- <a class="navbar-brand" href="#" style="height: 100%;">
-     <img src="./images/Avatar.jpg" alt="Logo" style="height: 100%;">
+ <a class="navbar-brand" href="../HomePage.html" style="height: 100%;">
+     <img src="../images/Avatar.jpg" alt="Logo" style="height: 100%;">
  </a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
      <ul class="navbar-nav ml-auto">
          <li class="nav-item active">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="../HomePage.html">
                  <i class="fas fa-home"></i>
                  Trang Chủ
              </a>
@@ -62,9 +62,9 @@
              </a>
              <div id="account-dropdown" class="account-dropdown">
                  <ul>
-                     <li><a href="AccountInfo.html">Thông tin tài khoản</a></li>
-                     <li><a href="MyOrders.html">Đơn hàng của tôi</a></li>
-                     <li><a href="SignOut.html">Đăng xuất</a></li>
+                     <li><a href="../UserInfo.html">Thông tin tài khoản</a></li>
+                     <li><a href="../OrderManagement.html">Đơn hàng của tôi</a></li>
+                     <li><a href="../SignOut.html">Đăng xuất</a></li>
                  </ul>
              </div>
          </li>
@@ -84,11 +84,11 @@
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Product Image</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Product Price</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Total Price</th>
+                    <th scope="col"></th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Tổng tiền</th>
                 </tr>
             </thead>
             <tbody>
@@ -99,7 +99,7 @@
                     </td>
                     <td><img src="https://3dcomputer.vn/uploads/images/products/cac-man-hinh/rtx2080-gigabyte/geforce-rtx-2080-gaming-oc-8g.png"
                             alt="Product 1" class="img-thumbnail" style="width: 100px;"></td>
-                    <td>Product 1</td>
+                    <td>Sản phẩm 1</td>
                     <td>$50.00</td>
                     <td>
                         <input type="number" class="form-control quantity-input" value="1">
@@ -114,7 +114,7 @@
                     </td>
                     <td><img src="https://halinhcomputer.vn/uploads/images/products/cac-man-hinh/galax-rtx-2080-sg-edition-8gb-gddr6.jpg"
                             alt="Product 2" class="img-thumbnail" style="width: 100px;"></td>
-                    <td>Product 2</td>
+                    <td>Sản phẩm 2</td>
                     <td>$35.00</td>
                     <td>
                         <input type="number" class="form-control quantity-input" value="1">
@@ -134,7 +134,7 @@
 
         <!-- Checkout Button -->
         <div class="text-right mt-3">
-            <button class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            <a href="./checkout.html"><button class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button></a>
         </div>
     </div>
 
