@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Sign In</title>
@@ -11,6 +12,7 @@
     body {
       background-color: #f5f5f5;
     }
+
     .form-signin {
       max-width: 400px;
       margin: 0 auto;
@@ -18,13 +20,15 @@
       border: 1px solid #ccc;
       border-radius: 10px;
       background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-top: 100px;
     }
+
     .form-signin-heading {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .form-control {
       position: relative;
       box-sizing: border-box;
@@ -32,92 +36,96 @@
       padding: 10px;
       font-size: 16px;
     }
+
     .form-control:focus {
       z-index: 2;
     }
+
     .btn-primary {
       display: block;
       width: 100%;
       padding: 10px;
       margin-top: 20px;
     }
+
     .forgot-password,
     .sign-up {
       text-align: center;
       margin-top: 15px;
       display: block;
     }
+
     .password-icon {
       cursor: pointer;
     }
-
-    
   </style>
 </head>
+
 <body>
 
-    <div class="container phu-signin-container">
-        <form class="form-signin" id="signInForm">
-          <h2 class="form-signin-heading">Sign In</h2>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <div class="input-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="input-group-append">
-              <span class="input-group-text password-icon" id="showPassword">
-                <i class="fas fa-eye-slash" id="eyeIcon"></i>
-              </span>
-            </div>
-          </div>
-          <button class="btn btn-lg btn-primary" type="submit">Sign In</button>
-          <a href="ForgotPassword.html" class="forgot-password">Forgot password?</a>
-          <a href="SignUp.html" class="sign-up">Sign Up</a>
-        </form>
+  <div class="container phu-signin-container" id="signInContainer">
+    <form class="form-signin" id="signInForm">
+      <h2 class="form-signin-heading">Sign In</h2>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <div class="input-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="input-group-append">
+          <span class="input-group-text password-icon" id="showPassword">
+            <i class="fas fa-eye-slash" id="eyeIcon"></i>
+          </span>
+        </div>
       </div>
-      
-      <!-- Bootstrap JS and jQuery (for Bootstrap) -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      <!-- Font Awesome JS -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-      <script>
-        $(document).ready(function() {
-          $('#signInForm').submit(function(e) {
-            const email = $('#inputEmail').val();
-            const password = $('#inputPassword').val();
-      
-            if (!validateEmail(email) || password.length < 6) {
-              e.preventDefault();
-              if (!validateEmail(email)) {
-                alert('Please enter a valid email address.');
-              }
-              if (password.length < 6) {
-                alert('Password must be at least 6 characters long.');
-              }
-            }
-          });
-      
-          function validateEmail(email) {
-            // A simple email validation pattern
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(String(email).toLowerCase());
+      <button class="btn btn-lg btn-primary" type="submit">Sign In</button>
+      <a href="ForgotPassword.html" class="forgot-password">Forgot password?</a>
+      <a href="SignUp.html" class="sign-up">Sign Up</a>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and jQuery (for Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#signInForm').submit(function (e) {
+        const email = $('#inputEmail').val();
+        const password = $('#inputPassword').val();
+
+        if (!validateEmail(email) || password.length < 6) {
+          e.preventDefault();
+          if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
           }
-      
-          // Toggle password visibility (unchanged)
-          $('#showPassword').on('click', function() {
-            const passwordField = $('#inputPassword');
-            const fieldType = passwordField.attr('type');
-            if (fieldType === 'password') {
-              passwordField.attr('type', 'text');
-              $('#eyeIcon').removeClass('fa-eye-slash').addClass('fa-eye');
-            } else {
-              passwordField.attr('type', 'password');
-              $('#eyeIcon').removeClass('fa-eye').addClass('fa-eye-slash');
-            }
-          });
-        });
-      </script>
+          if (password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+          }
+        }
+      });
+
+      function validateEmail(email) {
+        // A simple email validation pattern
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      // Toggle password visibility (unchanged)
+      $('#showPassword').on('click', function () {
+        const passwordField = $('#inputPassword');
+        const fieldType = passwordField.attr('type');
+        if (fieldType === 'password') {
+          passwordField.attr('type', 'text');
+          $('#eyeIcon').removeClass('fa-eye-slash').addClass('fa-eye');
+        } else {
+          passwordField.attr('type', 'password');
+          $('#eyeIcon').removeClass('fa-eye').addClass('fa-eye-slash');
+        }
+      });
+    });
+  </script>
 
 </body>
+
 </html>
